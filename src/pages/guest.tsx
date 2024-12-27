@@ -3,7 +3,7 @@ import Peer, { MediaConnection } from "peerjs";
 import { io } from "socket.io-client";
 
 const VideoCall: React.FC = () => {
-  const [userId] = useState<string>('Guest');
+  const [userId] = useState<string>(`Guest-${Math.floor(Math.random() * 1000)}`);
   const [, setPeerId] = useState<string>('');
   const remoteVideoRef = useRef<HTMLVideoElement | null>(null);
   const currentUserVideoRef = useRef<HTMLVideoElement | null>(null);
